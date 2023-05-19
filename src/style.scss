@@ -1,12 +1,13 @@
-$bgcolor: #fbfdff;
+$bgcolor: #222222;
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  font-family: 'Roboto', sans-serif;
+  
   
   color-scheme: light dark;
-  color: rgba(15, 15, 15, 0.87);
+  color: rgba(238, 238, 238, 0.87);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -62,11 +63,11 @@ nav {
   height: 14vh;
   border-bottom-left-radius: 50% 20%;
   border-bottom-right-radius: 50% 20%;
-    border: rgba(96, 153, 49, 0.548) 2px;
+    border: rgba(34, 48, 23, 0.548) 2px;
     border-style: none solid solid none;
-
+  animation: uncurve 2s ease-in 0s 1 forwards;
     a {
-      color: rgba(15, 15, 15, 0.87);
+      color: rgba(233, 233, 233, 0.87);
       text-decoration: none;
     }
 }
@@ -77,8 +78,17 @@ section {
   background: $bgcolor;
   padding: 32px 0;
   h1, h2, h3, h4 {
-    margin: 32px 200px;
+    margin: 32px 20%;
     
+  }
+  h1 {
+    font-family: 'Roboto Mono', monospace;
+    color: rgba(187, 187, 187, 0.87);
+    text-align: center;
+    font-size: 2rem;
+  }
+  h2 {
+    margin-left: 22%;
   }
 }
 section:first-child {
@@ -100,11 +110,11 @@ section:first-child {
     background-color: rgba(15, 15, 15, 0.87);
     color: #fbfdff;
     height: 30vh;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     top: 50%;
     transform: translateY(-50%);
-    padding: 32px;
-
+    padding: 48px;
+    text-align: center;
   }
 }
 
@@ -123,4 +133,14 @@ section:first-child {
       filter:contrast(100%) brightness(160%) blur(0);
       transform: translateY(0);
     }
+}
+@keyframes uncurve {
+  0% {
+    border-bottom-left-radius: 50% 90%;
+    border-bottom-right-radius: 50% 90%;
+  }
+  100% {
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+  }
 }
