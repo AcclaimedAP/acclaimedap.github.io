@@ -212,6 +212,12 @@ section:first-child {
     text-shadow: none;
   }
 }
+#portfolio{
+  .additionalprojects {
+    margin: 0;
+    text-align: center;
+  }
+}
 #portfoliocontainer {
 
   display: flex;
@@ -249,20 +255,71 @@ section:first-child {
     list-style: none;
   }
   a {
-    color: rgba(245, 217, 253, 0.7);
-    text-decoration: none;
-  }
+          color: rgba(233, 233, 233, 0.87);
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          color: rgba(255, 255, 255, 0.87);
+        }
+        }
 
   .project {
     width: calc((100vw / 3) - 74px);
     flex-grow: 0;
     flex-shrink: 0;
     margin-bottom: 32px;
-    box-shadow: 4px 4px 10px black;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.349);
     padding: 32px;
     background-color: rgba(255, 255, 255, 0.07);
   }
 }
+
+#contactme {
+  #contactcontainer {
+    margin-top: 36px;
+    display: flex;
+    justify-content: space-evenly;
+    .contact {
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.349);
+      text-align: center;
+      flex-grow: 0;
+      width: 340px;
+      padding: 24px;
+      margin: 0;
+      background-color: rgba(243, 243, 243, 0.07);
+      img {
+        position: relative;
+        left: 50%;
+
+        transform: translate(-50%, 0) scale(1.0);
+        width: 250px;
+        aspect-ratio: 1 / 1;
+        transform-origin: center;
+        transition: all 0.3s ease-in-out;
+        filter: drop-shadow(0 0 0px rgba(230, 230, 230, 0));
+        &:hover {
+          filter: drop-shadow(0 0 5px rgba(230, 230, 230, 0.8));
+          transform: translate(-50%, 0) scale(1.05);
+        }
+      }
+      h3 {
+        a {
+          color: rgba(233, 233, 233, 0.87);
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          color: rgba(255, 255, 255, 0.87);
+        }
+        }
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+}
+
+
 
 
 @keyframes deblur {

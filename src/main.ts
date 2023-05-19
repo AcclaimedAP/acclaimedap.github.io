@@ -1,3 +1,4 @@
+import { Contact, contacts } from './contact';
 import { Project, projects } from './portfolio';
 import { Skill, skills } from './skills';
 import './style.scss'
@@ -55,12 +56,34 @@ function createPortfolioContainerHTML(): void {
     }
 }
 
+function createContactHTML(contact: Contact) {
+    const container = document.createElement('div') as HTMLDivElement;
+    container.classList.add('contact');
+    container.innerHTML = `
+        <h2>${contact.method}<h2>
+        <a href="${contact.href}"><img src="./contact/${contact.image}"></a>
+        <h3><a href="${contact.href}">${contact.text}</a></h3>
+
+    `
+
+    return container;
+}
+
+function createContactContainerHTML(): void {
+    const container = document.getElementById('contactcontainer');
+    if (container) {
+        for (var contact of contacts) {
+            container.appendChild(createContactHTML(contact));
+        }
+    }
+}
 
 
 function init():void {
     
     createSkillsContainerHTML();
     createPortfolioContainerHTML();
+    createContactContainerHTML();
 }
 
 init();
