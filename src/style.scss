@@ -5,7 +5,6 @@ $bgcolor: #222222;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
-  
   color-scheme: light dark;
   color: rgba(238, 238, 238, 0.87);
 
@@ -56,39 +55,89 @@ nav {
   }
 }
 
+#skillContainer {
+  display: grid;
 
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.skill{
+  margin: 8px;
+  text-align: center;
+  position: relative;
+  font-size: 1.4rem;
+  height: fit-content;
+  background-color: rgb(68, 68, 68);
+  height: 12px;
+  padding: 28px;
+  transition: all 0.2s ease-in-out;
+    img {
+      margin: -16px -16px;
+      width: 48px;
+      height: 48px;
+      float: left;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.644))
+    }
+    &:hover{
+      background-color: rgb(85, 85, 85);
+    }
+    meter {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%,0);
+      width: 100%;
+      border-radius: 0;
+      height: 4px;
+      background: none;
+      appearance: none;
+      &::-moz-meter-bar{
+        background: rgb(60, 200, 60);
+      }
+    }
+    
+}
 .background {
-    background-image: url("../trees-background.jpg");
+    background-image: url("../keyfish.svg");
     object-fit: cover;
     transform-origin: middle center;
     background-repeat: no-repeat;
     filter:contrast(100%) brightness(180%) blur(30px);
-    transform: translateY(-50px);
+    
     position: fixed;
-    left: 0;
+    left: -15%;
     top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    animation: deblur 4s ease-in-out 0.5s 1 forwards;
+    width: 170vw;
+    height: 170vh;
+    z-index: -2;
+    animation: deblur 4s ease-in-out 0s 1 forwards, rotate 230s 0.5s linear infinite forwards;
+    overflow: auto;
 }
+.waves {
+      position: fixed;
+      width: 100vw;
+      bottom: -10px;
+      scale: 1;
+      z-index: -1;
+    }
 .curved {
   top: 0;
   position: absolute;
+  margin: 0;
+  padding: 0;
   width: 100svw;
+  max-width: 100%;
   background: $bgcolor;
   height: 14vh;
   border-bottom-left-radius: 50% 20%;
   border-bottom-right-radius: 50% 20%;
-    border: rgba(34, 48, 23, 0.548) 2px;
-    border-style: none solid solid none;
-  animation: uncurve 2s ease-in 0s 1 forwards;
+  //animation: uncurve 2s ease-in 0s 1 forwards;
     
 }
 
 section {
   position: relative;
-  min-height: 40vh;
   background: rgb(34,34,34);
   background: linear-gradient(0deg, rgba(34,34,34,1) 0%, rgba(46, 46, 46,1) 100%);
   padding: 32px 0;
@@ -155,16 +204,75 @@ section:first-child {
   background-image: url("./me.svg");
   
 }
+.info {
+  p {
+    margin: -16px 0 0 0;
+    text-align: center;
+    color: rgba(138, 138, 138, 0.5);
+    text-shadow: none;
+  }
+}
+#portfoliocontainer {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-evenly;
+  label {
+    display: block;
+    filter: brightness(80%);
+    margin: 16px;
+  }
+  h2 {
+    margin: 22px;
+  }
+  h3 {
+    font-size: 0.9rem;
+    margin: 16px;
+  }
+  p {
+    margin: 16px;
+  }
+  ul {
+    margin: none;
+    text-align: left;
+    display: inline;
+    padding: 0;
+    li {
+      display: inline;
+
+      &:not(:first-child)::before {
+        content: ", ";
+      }
+    }
+    list-style: none;
+  }
+  a {
+    color: rgba(245, 217, 253, 0.7);
+    text-decoration: none;
+  }
+
+  .project {
+    width: calc((100vw / 3) - 74px);
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-bottom: 32px;
+    box-shadow: 4px 4px 10px black;
+    padding: 32px;
+    background-color: rgba(255, 255, 255, 0.07);
+  }
+}
 
 
 @keyframes deblur {
     0% {
       filter:contrast(100%) brightness(180%) blur(30px);
-      transform: translateY(-50px);
+
     }
     100% {
       filter:contrast(100%) brightness(100%) blur(0);
-      transform: translateY(0);
+
     }
 }
 @keyframes uncurve {
@@ -186,4 +294,25 @@ section:first-child {
       opacity: 1;
       transform: translate(-50%, -50%);
     }
+}
+ @keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  } 100% {
+    transform: rotate(360deg);
+  }
+ }
+
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+.transition-all {
+  transition: all;
+}
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.delay-150 {
+  transition-delay: 150ms;
 }
