@@ -38,6 +38,7 @@ nav {
     li {
       
       a {
+        white-space: nowrap;
         opacity: 0;
         animation: fadein 1.2s ease-in-out 0s 1 forwards;
         padding: 32px;
@@ -459,4 +460,58 @@ section:first-child {
 }
 .delay-150 {
   transition-delay: 150ms;
+}
+
+@media screen and (max-width: 1080px) {
+
+  
+  .fish {
+    
+    
+  }
+  .background {
+    #fish-3 {
+      top: 120%;
+    }
+
+  }
+  .herotext {
+    top: 60%;
+    span {
+      transform: translate(-50%,-40%);
+    }
+  }
+  #skillContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+  #aboutme {
+    .content {
+      width: 100%;
+      background-color: rgba(31, 31, 31, 0.944);
+    }
+  }
+  #mesvg {
+    background-position: 25%;
+  }
+  #portfoliocontainer {
+    margin: 32px;
+    .project {
+      width: calc(50% - 80px);
+      margin: 6px;
+    }
+  }
+  #contactme {
+    #contactcontainer {
+      .contact {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: calc((100vw / 3) - 52px);
+        font-size: 0.65rem;
+        img {
+          width: 160px;
+
+        }
+      }
+    }
+  }
 }
