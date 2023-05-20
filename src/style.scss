@@ -334,7 +334,21 @@ section:first-child {
       letter-spacing: 0.2rem;
     }
   }
-
+#aboutme {
+  background-color: #2d1650;
+  background-image: url("./djing.svg");
+  background-position: left middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  .content {
+    margin: 32px;
+    width: 70%;
+    border: solid 2px rgba(233, 233, 233, 0.87);
+    background-color: rgba(31, 31, 31, 0.844);
+}
+}
 
 
 @keyframes deblur {
