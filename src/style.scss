@@ -136,7 +136,8 @@ nav {
     
 }
 
-section {
+section, footer {
+  
   position: relative;
   background: rgb(34,34,34);
   background: linear-gradient(0deg, rgba(34,34,34,1) 0%, rgba(46, 46, 46,1) 100%);
@@ -219,7 +220,7 @@ section:first-child {
   }
 }
 #portfoliocontainer {
-
+  margin: 0 10%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -264,7 +265,7 @@ section:first-child {
         }
 
   .project {
-    width: calc((100vw / 3) - 74px);
+    width: calc((100vw / 3) - 74px - 10%);
     flex-grow: 0;
     flex-shrink: 0;
     margin-bottom: 32px;
@@ -318,7 +319,21 @@ section:first-child {
   }
 
 }
-
+.totop {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0); 
+    text-align: center;
+    color: rgba(238, 238, 238, 0.87);
+    text-decoration: none;
+    letter-spacing: 0.15rem;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: rgba(243, 243, 243, 0.87);
+      letter-spacing: 0.2rem;
+    }
+  }
 
 
 
