@@ -99,19 +99,64 @@ nav {
     
 }
 .background {
-    background-image: url("../keyfish.svg");
-    object-fit: cover;
+    .fish {
+    background-size: contain;
+    transform-origin: 30% 30%;
+    background-repeat: no-repeat;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 160vw;
+    height: 160vh;
+    }
+
+    #fish-1 {
+      width: 120vw;
+      height: 120vh;
+      transform-origin: 60% 10%;
+      left: -15%;
+      top: 105%;
+      background-image: url("../keyfish2.svg");
+      animation: deblur 4s ease-in-out 0s 1 forwards, rotate90 200s 0s linear infinite forwards;
+    }
+    #fish-2 {
+      transform-origin: 20% 30%;
+      left: 20%;
+      top: 30%;
+      animation: deblur 4s ease-in-out 0s 1 forwards, rotate 190s 0s linear infinite forwards;
+      background-image: url("../keyfish3.svg");
+    }
+    #fish-3 {
+      width: 110vw;
+      height: 110vh;
+      transform-origin: -3% 3%;
+      left: 45%;
+      top: 100%;
+      animation: deblur 4s ease-in-out 0s 1 forwards, rotate180 230s 0s linear infinite forwards;
+      background-image: url("../keyfish4.svg");
+    }
+    #fish-4 {
+      width: 100vw;
+      height: 100vh;
+      transform-origin: 80% 80%;
+      left: -30%;
+      top: 30%;
+      animation: deblur 4s ease-in-out 0s 1 forwards, rotate90 190s 0s linear infinite forwards reverse;
+      background-image: url("../keyfish3reverse.svg");
+    }
+    //background-image: url("../keyfish.svg");
+    
     transform-origin: middle center;
     background-repeat: no-repeat;
-    filter:contrast(100%) brightness(180%) blur(30px);
+    //filter:contrast(100%) brightness(180%) blur(30px);
     
     position: fixed;
-    left: -15%;
+    left: 0;
     top: 0;
     width: 170vw;
     height: 170vh;
     z-index: -2;
-    animation: deblur 4s ease-in-out 0s 1 forwards, rotate 230s 0.5s linear infinite forwards;
+    //animation: deblur 4s ease-in-out 0s 1 forwards, rotate 230s 0.5s linear infinite forwards;
     overflow: auto;
 }
 .waves {
@@ -388,7 +433,20 @@ section:first-child {
     transform: rotate(360deg);
   }
  }
-
+ @keyframes rotate90 {
+  0% {
+    transform: rotate(90deg);
+  } 100% {
+    transform: rotate(450deg);
+  }
+ }
+@keyframes rotate180 {
+  0% {
+    transform: rotate(180deg);
+  } 100% {
+    transform: rotate(540deg);
+  }
+ }
 
 .duration-300 {
   transition-duration: 300ms;
