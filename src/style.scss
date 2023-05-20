@@ -515,3 +515,85 @@ section:first-child {
     }
   }
 }
+
+@media screen and (max-width: 810px) {
+  nav {
+    max-width: 100vw;
+    position: relative;
+    
+    ul {
+      font-size: 0.8rem;
+      
+      li {
+        transform: translateX(-16px);
+        a {
+          padding: 8px;
+        }
+        
+
+      }
+    }
+    
+  }
+  .herotext {
+    top: 55%;
+    span {
+      transform: translate(-50%,-40%);
+    }
+  }
+  .info p {
+    display: none;
+  }
+  #skillContainer {
+    grid-template-columns: 1fr;
+    .skill {
+      font-size: 1.5rem;
+    }
+  }
+  #aboutme {
+    padding: 0;
+    .content {
+      margin: 0;
+    }
+  }
+  #mesvg {
+    background-position: 23%;
+    aside {
+      width: 50%;
+      padding: 1rem;
+      h3 {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  #portfoliocontainer {
+    margin: 32px;
+    .project {
+      width: calc(100% - 12px);
+      margin: 6px;
+    }
+  }
+  #contactme {
+    #contactcontainer {
+      flex-direction: column;
+      .contact {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: calc(100vw - 48px);
+        font-size: 1.0rem;
+        img {
+          
+          width: 200px;
+
+        }
+        h2 {
+          margin: 16px;
+        }
+      }
+    }
+  }
+}
