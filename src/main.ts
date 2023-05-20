@@ -61,7 +61,7 @@ function createContactHTML(contact: Contact) {
     container.classList.add('contact');
     container.innerHTML = `
         <h2>${contact.method}<h2>
-        <a href="${contact.href}"><img src="./contact/${contact.image}"></a>
+        <a href="${contact.href}"><img src="./contact/${contact.image}" alt="${contact.alt}"></a>
         <h3><a href="${contact.href}">${contact.text}</a></h3>
 
     `
